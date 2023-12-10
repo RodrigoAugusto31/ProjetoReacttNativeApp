@@ -1,4 +1,11 @@
 {
   "name": "ProjetoReacttNativeApp",
-  "displayName": "ProjetoReacttNativeApp"
+  "displayName": "ProjetoReacttNativeApp",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "b4c62f05-4f08-4238-a86e-115a7e5084a6"
+      }
+    }
+  }
 }
