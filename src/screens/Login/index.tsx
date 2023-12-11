@@ -14,8 +14,8 @@ export default function Login() {
     console.log("chamou");
     axios
       .post("http://10.0.2.2:3000/user/login", {
-        username: "gabriel",
-        password: "1234",
+        username: "raj",
+        password: "3103",
       })
       .then(function (response) {
         userData.setUser({
