@@ -37,6 +37,7 @@ export default function Login() {
       <Input mt={2} />
       <Flex width="100%">
         <Button content="Sign in" handleClick={handleLogin} />
+        <Button content="Register" handleClick={handleLogin} />
       </Flex>
     </Flex>
   );
