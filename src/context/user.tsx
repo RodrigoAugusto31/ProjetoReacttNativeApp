@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-type IUser = {
+export type IUser = {
   name: string;
   email: string;
   token: string | null;

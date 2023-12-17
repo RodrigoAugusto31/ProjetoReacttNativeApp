@@ -12,7 +12,7 @@ export default function Button({
   handleClick,
 }: Props) {
   return (
-    <NativeButton bg={`${variation}.100`} mt={3} onPress={handleClick}>
+    <NativeButton bg={`${variation}.100`} mt={3} onPress={handleClick} testID="button-test">
       {content}
     </NativeButton>
   );
