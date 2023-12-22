@@ -18,8 +18,8 @@ export default function Login() {
     })
       .then(function (response) {
         userData.setUser({
-          name: "raj31",
-          email: "teste@gmail.com",
+          name: "Gabriel",
+          email: "gabrielgs1408@gmail.com",
           token: response.data.token,
         });
       })
@@ -36,7 +36,6 @@ export default function Login() {
       <Input mt={2} onChangeText={(value) => setPassword(value)} />
       <Flex width="100%">
         <Button content="Sign in" handleClick={handleLogin} />
-        <Button content="Register" handleClick={handleLogin} />
       </Flex>
     </Flex>
   );
