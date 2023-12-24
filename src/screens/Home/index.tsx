@@ -1,7 +1,7 @@
 import { Center, Flex, Heading, Text } from "native-base";
 import { useContext, useState, useEffect } from "react";
 import UserContext from "../../context/user";
-import { FlatList, Alert } from "react-native";
+import { FlatList, Alert, Image } from "react-native";
 import Card from "../../components/Card";
 import Selected from "../../components/Selected";
 import { getAlbums } from "../../services/albums";
@@ -14,7 +14,7 @@ export default function Home() {
   const [stories, setNames] = useState([]);
 
   useEffect(() => {
-    if (selectedAlbum == "Iron maden") {
+    if (selectedAlbum.album == "Iron maden") {
       Alert.alert("Parabéns!", "Voce selecionou um ótimo album!");
     }
   }, [selectedAlbum]);
@@ -68,15 +68,26 @@ export default function Home() {
           key={item.id}
           img={item.img}
           album={item.album}
-          setSelectedAlbum={setSelectedAlbum}
+          setSelectedAlbum={() => setSelectedAlbum(item)}
+         // setSelectedAlbum={setSelectedAlbum}
         />
       )}
       keyExtractor={(item) => item.id}
       horizontal
       style={{ marginBottom: 10 }} 
     />
-    <Text color="secondary.100">Album selecionado: </Text>
-    <Selected text={selectedAlbum} />
+   {selectedAlbum && (
+        <Flex alignItems="center" mt={8}>
+          <Heading color="secondary.100">Selected album: </Heading>
+          <Image
+            source={{ uri: selectedAlbum.img }} 
+            style={{ width: 100, height: 100, borderRadius: 50,  marginTop: 10}}
+          />
+          <Text color="secondary.100" fontSize="lg" ml={2}>
+            {selectedAlbum.album}
+          </Text>
+        </Flex>
+      )}
   </Flex>
 );
 }
