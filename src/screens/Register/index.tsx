@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import Button from "../../components/Button";
 import UserContext from "../../context/user";
 import { useNavigation } from "@react-navigation/native";
+import { Alert } from 'react-native';
+import { register } from "../../services/auth";
 
 export default function Register() {
   const userData = useContext(UserContext);
@@ -12,8 +14,20 @@ export default function Register() {
   userData.user?.token;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const handleRegister = () => {};
-
+  const handleRegister = () => {
+  
+    register({
+      username: username,
+      password: password,
+    })
+      .then(function (response) {
+        Alert.alert("Success", "Registro bem-sucedido. Faça login para continuar.");
+      })
+      .catch(function (error) {
+        console.error("error", error);
+        Alert.alert("Error", "Erro ao registrar. Verifique suas informações.");
+      });
+  };
   return (
     <Flex p={5} flex={1} justifyContent="center" alignItems="center">
       <Heading>Tela cadastro</Heading>
