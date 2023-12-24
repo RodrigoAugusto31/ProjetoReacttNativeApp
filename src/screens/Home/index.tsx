@@ -3,7 +3,6 @@ import { useContext, useState, useEffect } from "react";
 import UserContext from "../../context/user";
 import { FlatList, Alert, Image } from "react-native";
 import Card from "../../components/Card";
-import Selected from "../../components/Selected";
 import { getAlbums } from "../../services/albums";
 import { getStories } from "../../services/stories";
 import RoundCard from "../../components/Card/roundCard";
@@ -69,7 +68,6 @@ export default function Home() {
           img={item.img}
           album={item.album}
           setSelectedAlbum={() => setSelectedAlbum(item)}
-         // setSelectedAlbum={setSelectedAlbum}
         />
       )}
       keyExtractor={(item) => item.id}

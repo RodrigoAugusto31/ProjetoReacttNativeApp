@@ -5,7 +5,6 @@ import Login from "../Login";
 
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { StackNavigation } from "../../routes/stack";
-import Register from "../Register";
 
 const Tab = createMaterialTopTabNavigator();
 
