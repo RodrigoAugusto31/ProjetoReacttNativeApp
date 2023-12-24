@@ -18,8 +18,8 @@ export default function Login() {
     })
       .then(function (response) {
         userData.setUser({
-          name: "Gabriel",
-          email: "gabrielgs1408@gmail.com",
+          name: "Rodrigo",
+          email: "teste@gmail.com",
           token: response.data.token,
         });
       })

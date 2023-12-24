@@ -1,5 +1,5 @@
 import { Container, Image } from "native-base";
-import { TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 interface Props {
   album: string;
@@ -9,7 +9,10 @@ interface Props {
 
 export default function Card({ img, album, setSelectedAlbum }: Props) {
   return (
-    <TouchableOpacity onPress={() => setSelectedAlbum(album)}>
+    <TouchableOpacity
+      style={styles.cardContainer}
+      onPress={() => setSelectedAlbum(album)}
+    >
       <Image
         m={2}
         source={{
@@ -21,3 +24,9 @@ export default function Card({ img, album, setSelectedAlbum }: Props) {
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  cardContainer: {
+    margin: 0, 
+  },
+});
