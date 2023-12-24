@@ -27,6 +27,15 @@ export default function Card({ img, album, setSelectedAlbum }: Props) {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    margin: 0, 
+    width: 150,
+    height: 150,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
 });
